@@ -7,6 +7,10 @@ import { IPostInstallDistTag, PackagePath } from './types';
 const { distTag: distTagPath } = PackagePath;
 
 export default async function ({ distTag, workingDirectory }: IPostInstallDistTag) {
+    console.log('*'.repeat(32));
+    console.log({ distTag, workingDirectory });
+    console.log('*'.repeat(32));
+    console.log('*'.repeat(32));
     const packagePath = resolvePath(
         workingDirectory,
         'package'
