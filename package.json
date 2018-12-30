@@ -2,7 +2,10 @@
     "name": "vamtiger-postinstall",
     "version": "0.1.0",
     "description": "Postinstall utility",
-    "main": "build",
+    "main": "build/vamtiger-postinstall",
+    "bin": {
+        "vamtiger-postinstall": "build/vamtiger-postinstall.js"
+    },
     "scripts": {
         "test": "npm run clean && npm run build && npm run clean-build && npm run bundle-test && npm run bundle-source && npm run mocha",
         "mocha": "mocha build/test --recursive --timeout 10000",
@@ -12,7 +15,7 @@
         "clean-install": "rm -rf package-lock.json node_modules && npm i",
         "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger-postinstall)\\.(js(\\.map)?|d\\.ts)\"",
         "clean-build": "vamtiger-remove -d build -p \".*\\.ts\"",
-        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-postinstall.ts --bundleFilePath build/vamtiger-postinstall.js --format cjs --sourcemap true --copySourceMap --minify",
+        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-postinstall.ts --bundleFilePath build/vamtiger-postinstall.js --format cjs --sourcemap true --copySourceMap --minify --bin",
         "bundle-test": "vamtiger-bundle-typescript --relativePath --entryFilePath source/test/index.ts --bundleFilePath build/test/index.js --format cjs --sourcemap true --copySourceMap --minify",
         "bundle": "npm test && npm run clean-bundle",
         "watch": "npm run bundle -- --watch"
@@ -32,7 +35,7 @@
         "url": "https://github.com/vamtiger-project/vamtiger-install-dependecies/issues"
     },
     "homepage": "https://github.com/vamtiger-project/vamtiger-install-dependecies#readme",
-    "types": "build/index.d.ts",
+    "types": "build/vamtiger-postinstall.d.ts",
     "devDependencies": {
         "@types/chai": "^4.1.7",
         "@types/mocha": "^5.2.5",
