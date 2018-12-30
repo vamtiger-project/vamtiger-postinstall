@@ -10,11 +10,6 @@ const { distTag: distTagArg } = CommandlineArgument;
 const { distTag: shortDistTagArg } = ShortCommandlineArgument;
 const distTag = args.get(distTagArg || shortDistTagArg);
 
-console.log('*'.repeat(32));
-console.log({ distTag, workingDirectory });
-console.log('*'.repeat(32));
-console.log('*'.repeat(32));
-
 if (distTag) {
     postInstallDistTags({ workingDirectory, distTag })
         .catch(console.warn);

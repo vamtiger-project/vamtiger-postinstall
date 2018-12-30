@@ -45,3 +45,7 @@ export interface IInstall {
     workingDirectory: string;
     dependencies: string;
 }
+
+export interface IGetPackageData {
+    path: string;
+}
