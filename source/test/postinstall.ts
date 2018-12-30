@@ -31,7 +31,10 @@ const bashOptions = {
 describe.only('vamtiger-postinstall', function () {
     before(async function () {
         await bash(removeNodeModules);
-        await bash(postinstallDistTag, bashOptions);
+
+        let output = await bash(postinstallDistTag, bashOptions);
+
+        console.log(output);
     });
 
     after(async function () {

@@ -51,8 +51,8 @@
     "dependencies": {
         "tslib": "^1.9.3",
         "vamtiger-argv": "^1.2.6",
-        "vamtiger-bash": "0.0.25",
-        "vamtiger-get-directory-content": "0.0.35",
-        "vamtiger-require": "0.0.9"
+        "vamtiger-bash": "latest",
+        "vamtiger-get-directory-content": "latest",
+        "vamtiger-require": "latest"
     }
 }
