@@ -6,13 +6,22 @@ const { space } = StringConstant;
 
 export default function ({ path: packagePath}: IGetDependencies) {
     const currentDependenciesPath = `${packagePath}.${dependenciesPath}`;
+    const currentDevDependenciesPath = `${packagePath}.${devDependenciesPath}`;
     const dependencies = getPackageData({
         path: currentDependenciesPath
     }) as IStringObject;
+    const devDependencies = getPackageData({
+        path: currentDevDependenciesPath
+    }) as IStringObject;
+    const currentDependencies = {
+        ...dependencies,
+        ...devDependencies
+    }
     const installDependencies = Object
         .keys(dependencies)
         .map(dependency => `${dependency}@${dependencies[dependency]}`)
-        .join(space);
+        .join(space)
+        .replace(/@undefined/g, '');
 
     return installDependencies;
 }

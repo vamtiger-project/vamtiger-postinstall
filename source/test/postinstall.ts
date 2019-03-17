@@ -28,7 +28,7 @@ const bashOptions = {
     cwd: workingDirectory
 };
 
-describe.only('vamtiger-postinstall', function () {
+describe('vamtiger-postinstall', function () {
     before(async function () {
         await bash(removeNodeModules);
 
