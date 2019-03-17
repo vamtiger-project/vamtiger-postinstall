@@ -7,7 +7,7 @@ export enum FolderName {
 }
 
 export enum NpmScript {
-    install = 'npm i'
+    install = 'npm i --no-audit'
 }
 
 export enum CommandlineArgument {
