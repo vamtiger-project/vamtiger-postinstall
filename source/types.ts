@@ -7,8 +7,7 @@ export enum FolderName {
 }
 
 export enum InstallScript {
-    install = 'npm install --no-save',
-    installDev = 'npm install --no-save'
+    install = 'npm install --no-audit'
 }
 
 export enum CommandlineArgument {
