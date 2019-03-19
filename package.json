@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-postinstall",
-    "version": "0.10.1",
+    "version": "0.11.0",
     "description": "Postinstall utility",
     "main": "build/vamtiger-postinstall",
     "bin": {
@@ -53,6 +53,7 @@
         "vamtiger-argv": "^1.2.6",
         "vamtiger-bash": "latest",
         "vamtiger-get-directory-content": "latest",
-        "vamtiger-require": "latest"
+        "vamtiger-require": "latest",
+        "yarn": "^1.13.0"
     }
 }
