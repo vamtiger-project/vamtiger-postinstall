@@ -53,6 +53,7 @@
         "vamtiger-argv": "^1.2.6",
         "vamtiger-bash": "latest",
         "vamtiger-get-directory-content": "latest",
-        "vamtiger-require": "latest"
+        "vamtiger-require": "latest",
+        "yarn": "^1.13.0"
     }
 }

@@ -11,7 +11,8 @@ export default async function ({ workingDirectory, dependencies }: IInstall) {
     const bashOptions = {
         cwd: workingDirectory
     };
-    const installDependencies = `${install} ${dependencies}`;
+    // const installDependencies = `${install} ${dependencies}`;
+    const installDependencies = install;
 
     console.log(installDependencies);
     !folderContent.has(node_modules) && await bash(installDependencies, bashOptions);
