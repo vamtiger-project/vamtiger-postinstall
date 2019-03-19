@@ -19,9 +19,8 @@ export default function ({ path: packagePath}: IGetDependencies) {
     }
     const installDependencies = Object
         .keys(currentDependencies)
-        .map(dependency => `${dependency}@${dependencies[dependency]}`)
-        .join(space)
-        .replace(/@undefined/g, '');
+        .map(dependency => dependency)
+        .join(space);
 
     return installDependencies;
 }
