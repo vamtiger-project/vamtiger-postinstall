@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-postinstall",
-    "version": "0.10.0",
+    "version": "0.10.1",
     "description": "Postinstall utility",
     "main": "build/vamtiger-postinstall",
     "bin": {
