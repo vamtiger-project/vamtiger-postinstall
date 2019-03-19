@@ -13,6 +13,7 @@ export default async function ({ workingDirectory, dependencies, devDependencies
     };
     const installDependencies = dependencies && `${install} ${dependencies}` || `${installDev} ${devDependencies}`;
 
+    console.log(workingDirectory);
     console.log(installDependencies);
     !folderContent.has(node_modules) && await bash(installDependencies, bashOptions);
 }
