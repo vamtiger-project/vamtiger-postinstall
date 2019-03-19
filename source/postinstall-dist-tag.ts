@@ -23,14 +23,11 @@ export default async function ({ distTag, workingDirectory }: IPostInstallDistTa
         path: packagePath
     }) || '';
 
-    dependencies && await Promise.all([
-        await install({
-            workingDirectory,
-            dependencies
-        }),
-        await install({
-            workingDirectory,
+    dependencies && await await install({
+        workingDirectory,
+        dependencies: [
+            dependencies,
             devDependencies
-        })
-    ]);
+        ].join(' ')
+    });
 }

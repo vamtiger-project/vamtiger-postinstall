@@ -44,7 +44,6 @@ export interface IGetDependencies {
 export interface IInstall {
     workingDirectory: string;
     dependencies?: string;
-    devDependencies?: string;
 }
 
 export interface IGetPackageData {
