@@ -6,8 +6,9 @@ export enum FolderName {
     node_modules = 'node_modules'
 }
 
-export enum NpmScript {
-    install = 'yarn install'
+export enum InstallScript {
+    install = 'npm install --no-save',
+    installDev = 'npm install --no-save'
 }
 
 export enum CommandlineArgument {
@@ -43,7 +44,8 @@ export interface IGetDependencies {
 
 export interface IInstall {
     workingDirectory: string;
-    dependencies: string;
+    dependencies?: string;
+    devDependencies?: string;
 }
 
 export interface IGetPackageData {

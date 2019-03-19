@@ -1,6 +1,7 @@
 import { resolve as resolvePath } from 'path';
 import getPackageData from './get-package-data';
 import getDependencies from './get-dependencies';
+import getDevDependencies from './get-dev-dependecies';
 import install from './install';
 import { IPostInstallDistTag, PackagePath } from './types';
 
@@ -17,12 +18,19 @@ export default async function ({ distTag, workingDirectory }: IPostInstallDistTa
     }).catch(() => '') as string;
     const dependencies = distTag === packageDistTag && getDependencies({
         path: packagePath
-    });
+    }) || '';
+    const devDependencies = dependencies && getDevDependencies({
+        path: packagePath
+    }) || '';
 
-    if (dependencies) {
+    dependencies && await Promise.all([
         await install({
             workingDirectory,
-            dependencies 
-        });
-    }
+            dependencies
+        }),
+        await install({
+            workingDirectory,
+            devDependencies
+        })
+    ]);
 }

@@ -1,18 +1,17 @@
 import bash from 'vamtiger-bash';
 import getFolderContent from 'vamtiger-get-directory-content';
-import { IInstall, NpmScript, FolderName } from './types';
+import { IInstall, InstallScript, FolderName } from './types';
 
-const { install } = NpmScript;
+const { install, installDev } = InstallScript;
 const { node_modules } = FolderName;
 
-export default async function ({ workingDirectory, dependencies }: IInstall) {
+export default async function ({ workingDirectory, dependencies, devDependencies }: IInstall) {
     const folderContent = await getFolderContent(workingDirectory)
         .then(folderContent => new Set(folderContent));
     const bashOptions = {
         cwd: workingDirectory
     };
-    // const installDependencies = `${install} ${dependencies}`;
-    const installDependencies = install;
+    const installDependencies = dependencies && `${install} ${dependencies}` || `${installDev} ${devDependencies}`;
 
     console.log(installDependencies);
     !folderContent.has(node_modules) && await bash(installDependencies, bashOptions);

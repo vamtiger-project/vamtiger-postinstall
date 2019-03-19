@@ -1,7 +1,7 @@
 import getPackageData from 'vamtiger-require';
 import { IGetDependencies, PackagePath, IStringObject, StringConstant } from './types';
 
-const { dependencies: dependenciesPath } = PackagePath;
+const { devDependencies: dependenciesPath } = PackagePath;
 const { space } = StringConstant;
 
 export default function ({ path: packagePath}: IGetDependencies) {
