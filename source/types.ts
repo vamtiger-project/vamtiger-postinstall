@@ -11,7 +11,10 @@ export enum InstallScript {
 }
 
 export enum CommandlineArgument {
-    distTag = 'distTag'
+    distTag = 'distTag',
+    copy = 'copy',
+    sourceFolder = 'sourceFolder',
+    pattern = 'pattern'
 }
 
 export enum DistTag {
@@ -25,7 +28,10 @@ export enum PackagePath {
 }
 
 export const ShortCommandlineArgument = {
-    [CommandlineArgument.distTag]: 'd'
+    [CommandlineArgument.distTag]: 'd' as 'd',
+    [CommandlineArgument.copy]: 'c' as 'c',
+    [CommandlineArgument.sourceFolder]: 's' as 's',
+    [CommandlineArgument.pattern]: 'p' as 'p'
 };
 
 export interface IStringObject {
@@ -41,6 +47,11 @@ export interface IGetDependencies {
     path: string;
 }
 
+export interface IPostInstallCopy {
+    workingDirectory: string;
+    sourceFolder: string;
+    pattern: string;
+}
 export interface IInstall {
     workingDirectory: string;
     dependencies?: string;
