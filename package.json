@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-postinstall",
-    "version": "0.18.1",
+    "version": "0.19.0",
     "description": "Postinstall utility",
     "main": "build/vamtiger-postinstall",
     "bin": {
@@ -45,6 +45,8 @@
         "typescript": "^3.2.2",
         "vamtiger-browser-method": "source",
         "vamtiger-bundle-typescript": "0.0.27",
+        "vamtiger-create-directory": "0.0.5",
+        "vamtiger-create-file": "0.0.10",
         "vamtiger-node-typescript-commit": "^0.8.1",
         "vamtiger-remove": "0.0.5"
     },
@@ -52,7 +54,9 @@
         "tslib": "^1.9.3",
         "vamtiger-argv": "^1.2.6",
         "vamtiger-bash": "latest",
+        "vamtiger-copy-file": "latest",
         "vamtiger-get-directory-content": "latest",
+        "vamtiger-get-path-data": "0.0.2",
         "vamtiger-require": "latest",
         "yarn": "^1.13.0"
     }
